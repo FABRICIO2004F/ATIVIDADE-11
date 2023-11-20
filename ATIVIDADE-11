@@ -1,0 +1,133 @@
+#include <stdio.h>
+// Escreva uma função que receba por parâmetro dois números e retorne o maior deles.
+
+int maior(int n1, int n2){
+if (n1 > n2)
+{
+    return n1;
+}else{
+    return n2;
+}
+
+}
+main(){
+    int n1, n2, m;
+
+    printf("Digite dois numeros");
+    scanf("%d %d", &n1, &n2);
+
+    m = maior(n1, n2);
+    printf("O maior numero e: %d", m);
+
+}
+
+#include <stdio.h>
+
+void MesEDias(int numero);
+
+int main() {
+    int numero;
+
+    printf("Digite um número de 1 a 12: ");
+    scanf("%d", &numero);
+
+    MesEDias(numero);
+
+    return 0;
+}
+
+void MesEDias(int numero) {
+    if (numero < 1 || numero > 12) {
+        printf("Número fora do intervalo válido (1 a 12).\n");
+    } else {
+        const char *meses[] = {
+            "janeiro", "fevereiro", "março", "abril", "maio", "junho",
+            "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"
+        };
+        
+        const int diasNoMes[] = {
+            31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
+        };
+        
+        printf("Mês: %s\n", meses[numero - 1]);
+        printf("Quantidade de dias: %d\n", diasNoMes[numero - 1]);
+    }
+}
+
+#include <stdio.h>
+
+float converterCelcius(float valorF);
+
+main(){
+    float valorF, valorC;
+    printf("Digite o valor em Fahrenheit");
+    scanf("%f", valorF);
+
+    valorC = converterCelcius(valorF);
+
+    printf("%f", valorC);
+}
+float converterCelcius(float valorF){
+    float celcius = (valorF - 32.0) * (5.0/9.0);
+    return celcius;
+}
+
+#include <stdio.h>
+#include <math.h>
+double volumeC(double alt, double raio);
+
+main(){
+    double altura = 2, raio = 1, volume;
+    volume = volumeC(altura, raio);
+    printf("%lf", volume);
+}
+double volumeC(double alt, double raio){
+    double PI = 3.14159;
+    double volume = PI * pow(raio, 2) * alt;
+    return volume;
+}
+
+#include <stdio.h>
+#include <math.h>
+
+double volumeE(double raio);
+
+int main() {  
+    double raio, volume;
+    printf("Digite o tamanho do raio:");
+    scanf("%lf", &raio); 
+
+    volume = volumeE(raio);
+    printf("%lf", volume);
+    return 0; 
+}
+
+double volumeE(double raio) {
+    double PI = 3.14159; 
+    double volume = (4.0 / (3.0 * PI)) * pow(raio, 3);  
+    return volume;
+}
+
+#include <stdio.h>
+
+float calculaImc(float peso, float altura);
+main(){
+    float altura, peso, imc;
+    printf("digite o peso e a altura");
+    scanf("%f %f", &peso, &altura);
+
+    imc = calculaImc(peso, altura);
+
+    if(imc < 16){
+    printf("Abaixo do peso: %.2f", imc);
+    }else if(16 >= 16 && imc < 25){
+    printf("Peso normal: %.2f", imc);
+    }else{
+    printf("Acima do peso: %.2f", imc);
+    }
+}
+
+float calculaImc(float peso, float altura){
+    float imc = peso / (altura * altura);
+    return imc;
+}
